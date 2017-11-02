@@ -90,12 +90,6 @@ namespace TestColumbia
                 var locator = CrossGeolocator.Current;
                 locator.DesiredAccuracy = 100;
 
-                if (!locator.IsGeolocationAvailable || !locator.IsGeolocationEnabled)
-                {
-                    //not available or enabled
-                    return;
-                }
-
                 var currentLocation = await CrossGeolocator.Current.GetPositionAsync(TimeSpan.FromSeconds(10));
 
                 if (currentLocation == null)
